@@ -1,0 +1,62 @@
+Model: "model_4"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to                  
+==================================================================================================
+ input_5 (InputLayer)        [(None, 2)]                  0         []                            
+                                                                                                  
+ model_3 (Functional)        (None, 3)                    1801      ['input_5[0][0]']             
+                                                                                                  
+ tf.__operators__.getitem_4  (None,)                      0         ['model_3[0][0]']             
+  (SlicingOpLambda)                                                                               
+                                                                                                  
+ model (Functional)          (None, 1)                    2466      ['input_5[0][0]']             
+                                                                                                  
+ tf.__operators__.getitem_6  (None,)                      0         ['model_3[0][0]']             
+  (SlicingOpLambda)                                                                               
+                                                                                                  
+ model_1 (Functional)        (None, 1)                    34786     ['input_5[0][0]']             
+                                                                                                  
+ tf.__operators__.getitem_8  (None,)                      0         ['model_3[0][0]']             
+  (SlicingOpLambda)                                                                               
+                                                                                                  
+ model_2 (Functional)        (None, 1)                    29442     ['input_5[0][0]']             
+                                                                                                  
+ tf.expand_dims_4 (TFOpLamb  (None, 1)                    0         ['tf.__operators__.getitem_4[0
+ da)                                                                ][0]']                        
+                                                                                                  
+ tf.__operators__.getitem_5  (None, 1)                    0         ['model[0][0]']               
+  (SlicingOpLambda)                                                                               
+                                                                                                  
+ tf.expand_dims_5 (TFOpLamb  (None, 1)                    0         ['tf.__operators__.getitem_6[0
+ da)                                                                ][0]']                        
+                                                                                                  
+ tf.__operators__.getitem_7  (None, 1)                    0         ['model_1[0][0]']             
+  (SlicingOpLambda)                                                                               
+                                                                                                  
+ tf.expand_dims_6 (TFOpLamb  (None, 1)                    0         ['tf.__operators__.getitem_8[0
+ da)                                                                ][0]']                        
+                                                                                                  
+ tf.__operators__.getitem_9  (None, 1)                    0         ['model_2[0][0]']             
+  (SlicingOpLambda)                                                                               
+                                                                                                  
+ tf.math.multiply (TFOpLamb  (None, 1)                    0         ['tf.expand_dims_4[0][0]',    
+ da)                                                                 'tf.__operators__.getitem_5[0
+                                                                    ][0]']                        
+                                                                                                  
+ tf.math.multiply_1 (TFOpLa  (None, 1)                    0         ['tf.expand_dims_5[0][0]',    
+ mbda)                                                               'tf.__operators__.getitem_7[0
+                                                                    ][0]']                        
+                                                                                                  
+ tf.math.multiply_2 (TFOpLa  (None, 1)                    0         ['tf.expand_dims_6[0][0]',    
+ mbda)                                                               'tf.__operators__.getitem_9[0
+                                                                    ][0]']                        
+                                                                                                  
+ tf.math.reduce_sum (TFOpLa  (None, 1)                    0         ['tf.math.multiply[0][0]',    
+ mbda)                                                               'tf.math.multiply_1[0][0]',  
+                                                                     'tf.math.multiply_2[0][0]']  
+                                                                                                  
+==================================================================================================
+Total params: 68495 (267.56 KB)
+Trainable params: 68495 (267.56 KB)
+Non-trainable params: 0 (0.00 Byte)
+__________________________________________________________________________________________________
