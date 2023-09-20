@@ -1,0 +1,30 @@
+Model: "model_6"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to                  
+==================================================================================================
+ input_7 (InputLayer)        [(None, 144, 7)]             0         []                            
+                                                                                                  
+ dense_24 (Dense)            (None, 144, 32)              256       ['input_7[0][0]']             
+                                                                                                  
+ dropout_6 (Dropout)         (None, 144, 32)              0         ['dense_24[0][0]']            
+                                                                                                  
+ multi_head_attention_2 (Mu  (None, 144, 32)              33568     ['dropout_6[0][0]',           
+ ltiHeadAttention)                                                   'dropout_6[0][0]']           
+                                                                                                  
+ flatten_2 (Flatten)         (None, 4608)                 0         ['multi_head_attention_2[0][0]
+                                                                    ']                            
+                                                                                                  
+ dense_25 (Dense)            (None, 32)                   147488    ['flatten_2[0][0]']           
+                                                                                                  
+ dense_26 (Dense)            (None, 1)                    33        ['dense_25[0][0]']            
+                                                                                                  
+ multiply_6 (Multiply)       (None, 4608)                 0         ['flatten_2[0][0]',           
+                                                                     'dense_26[0][0]']            
+                                                                                                  
+ dense_27 (Dense)            (None, 144)                  663696    ['multiply_6[0][0]']          
+                                                                                                  
+==================================================================================================
+Total params: 845041 (3.22 MB)
+Trainable params: 845041 (3.22 MB)
+Non-trainable params: 0 (0.00 Byte)
+__________________________________________________________________________________________________
